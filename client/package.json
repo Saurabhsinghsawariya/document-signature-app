@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+  
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+     "dev": "nodemon index.js"
   },
   "dependencies": {
     "react": "^19.1.0",
