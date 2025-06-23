@@ -1,13 +1,10 @@
+import { Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
 
-
-function App() {
-
-
+export default function App() {
   return (
-    <>
-    <h1>saurabh</h1>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+  );
 }
-
-export default App

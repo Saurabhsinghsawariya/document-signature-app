@@ -4,21 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build": "tsc -b && vite build",
-    "dev": "vite"
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
-    "@types/react-pdf": "^5.0.7",
-    "pdfjs-dist": "^3.11.174",
+    "axios": "^1.10.0",
+    "pdfjs-dist": "^2.16.105",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-pdf": "^9.2.1"
+    "react-router-dom": "^7.6.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@tailwindcss/postcss": "^4.1.10",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
