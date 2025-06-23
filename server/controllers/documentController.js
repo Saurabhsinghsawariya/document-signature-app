@@ -1,5 +1,6 @@
 import Document from "../models/Document.js";
 
+
 // @desc Upload PDF Document
 export const uploadDocument = async (req, res) => {
   if (!req.file) {
@@ -21,5 +22,14 @@ export const uploadDocument = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+export const getUserDocuments = async (req, res) => {
+  try {
+    const docs = await Document.find({ user: req.user._id }).sort({ uploadDate: -1 });
+    res.status(200).json(docs);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to retrieve documents" });
   }
 };
