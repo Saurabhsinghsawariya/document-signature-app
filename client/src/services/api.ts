@@ -12,4 +12,14 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+// Add response interceptor for centralized error handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // You can customize error handling here, e.g., logging, notifications
+    console.error("API error:", error.response || error.message || error);
+    return Promise.reject(error);
+  }
+);
+
 export default api;

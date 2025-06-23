@@ -1,40 +1,16 @@
-import { useEffect, useState } from "react";
-import PDFPreview from "../components/PDFPreview";
-import api from "../services/api";
+import DocumentList from "../components/DocumentList";
+import UploadForm from "../components/UploadForm";
 
-interface Document {
-  _id: string;
-  filename: string;
-  path: string;
-}
-
-export default function Dashboard() {
-  const [docs, setDocs] = useState<Document[]>([]);
-
-  useEffect(() => {
-    const fetchDocs = async () => {
-      try {
-        const res = await api.get("/docs");
-        setDocs(res.data);
-      } catch (err) {
-        console.error("Error fetching documents", err);
-      }
-    };
-
-    fetchDocs();
-  }, []);
-
+const Dashboard = () => {
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Uploaded PDFs</h1>
-      <div className="space-y-6">
-        {docs.map((doc) => (
-          <div key={doc._id} className="p-4 border rounded shadow">
-            <p className="font-medium">{doc.filename}</p>
-            <PDFPreview fileUrl={`http://localhost:5000/${doc.path}`} />
-          </div>
-        ))}
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-6">📄 My Documents</h1>
+        <UploadForm />
+        <DocumentList />
       </div>
     </div>
   );
-}
+};
+
+export default Dashboard;
