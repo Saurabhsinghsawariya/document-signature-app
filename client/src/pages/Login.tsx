@@ -27,13 +27,13 @@ const Login = () => {
     };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-100">
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">🔐 Login</h2>
+    <div className="min-h-screen flex items-center justify-center bg-blue-900 dark:bg-blue-900 transition-colors duration-500">
+      <form onSubmit={handleLogin} className="bg-blue-800 dark:bg-blue-900 p-8 rounded-lg shadow-lg w-full max-w-md transition-colors duration-500">
+        <h2 className="text-3xl font-extrabold mb-6 text-center text-white">🔐 Login</h2>
         <input
           type="email"
           placeholder="Email"
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-3 border border-blue-600 rounded bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -41,16 +41,16 @@ const Login = () => {
         <input
           type="password"
           placeholder="Password"
-          className="w-full mb-6 p-2 border rounded"
+          className="w-full mb-6 p-3 border border-blue-600 rounded bg-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded w-full" type="submit">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded w-full transition-colors duration-300" type="submit">
           Login
         </button>
-        <p className="text-sm mt-4 text-center">
-          Don’t have an account? <a href="/register" className="text-blue-600">Register</a>
+        <p className="text-sm mt-4 text-center text-blue-200">
+          Don’t have an account? <a href="/register" className="text-blue-400 hover:text-blue-300">Register</a>
         </p>
       </form>
     </div>

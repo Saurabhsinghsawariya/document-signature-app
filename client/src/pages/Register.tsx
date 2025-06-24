@@ -32,13 +32,13 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-green-100">
-      <form onSubmit={handleRegister} className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">📝 Register</h2>
+    <div className="min-h-screen flex items-center justify-center bg-green-100 dark:bg-gray-800 transition-colors duration-300">
+      <form onSubmit={handleRegister} className="bg-white dark:bg-gray-900 p-8 rounded shadow-md w-full max-w-md transition-colors duration-300">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-gray-100">📝 Register</h2>
         <input
           type="text"
           placeholder="Full Name"
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -46,7 +46,7 @@ const Register = () => {
         <input
           type="email"
           placeholder="Email"
-          className="w-full mb-4 p-2 border rounded"
+          className="w-full mb-4 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -54,16 +54,16 @@ const Register = () => {
         <input
           type="password"
           placeholder="Password"
-          className="w-full mb-6 p-2 border rounded"
+          className="w-full mb-6 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="bg-green-600 text-white px-4 py-2 rounded w-full" type="submit">
+        <button className="bg-green-600 dark:bg-green-700 text-white px-4 py-2 rounded w-full" type="submit">
           Register
         </button>
-        <p className="text-sm mt-4 text-center">
-          Already have an account? <a href="/login" className="text-green-600">Login</a>
+        <p className="text-sm mt-4 text-center text-gray-900 dark:text-gray-100">
+          Already have an account? <a href="/login" className="text-green-600 dark:text-green-400">Login</a>
         </p>
       </form>
     </div>

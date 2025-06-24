@@ -31,11 +31,11 @@ const SignatureOverlay = ({ onDrop }: Props) => {
       }}
       onDragLeave={() => setDragging(false)}
       onDrop={handleDrop}
-      className="relative w-full h-[500px] border border-blue-300"
+      className="relative w-full h-[500px] border border-blue-300 dark:border-blue-700"
     >
       {/* Visual Drag Overlay */}
       {dragging && (
-        <div className="absolute inset-0 bg-blue-100/70 flex items-center justify-center text-blue-600 font-semibold">
+        <div className="absolute inset-0 bg-blue-100/70 dark:bg-blue-900/70 flex items-center justify-center text-blue-600 dark:text-blue-400 font-semibold">
           Drop to place signature
         </div>
       )}
@@ -44,7 +44,7 @@ const SignatureOverlay = ({ onDrop }: Props) => {
       {signatures.map((sig, idx) => (
         <div
           key={idx}
-          className="absolute w-32 h-10 bg-green-400 text-white text-sm flex items-center justify-center rounded"
+          className="absolute w-32 h-10 bg-green-400 dark:bg-green-600 text-white text-sm flex items-center justify-center rounded"
           style={{ top: sig.y, left: sig.x }}
         >
           Signature

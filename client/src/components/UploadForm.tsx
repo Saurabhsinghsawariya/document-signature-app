@@ -35,11 +35,11 @@ const UploadForm = () => {
         type="file"
         accept="application/pdf"
         onChange={(e) => setFile(e.target.files?.[0] || null)}
-        className="mb-4"
+        className="mb-4 dark:text-gray-100"
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="bg-blue-600 dark:bg-blue-700 text-white px-4 py-2 rounded"
       >
         Upload PDF
       </button>
